@@ -172,6 +172,8 @@ Application::Application(const Config &conf) :
     if (!m_implot_context)
         throw std::runtime_error("Failed to create ImPlot context!");
     ImPlot::SetColormap(ImPlotColormap_Deep);
+
+    initialise();
 }
 
 Application::Application() :

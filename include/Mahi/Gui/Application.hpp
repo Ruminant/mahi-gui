@@ -35,7 +35,7 @@ struct ImPlotContext;
 namespace mahi {
 namespace gui {
 
-/// A Application
+/// An Application
 class Application {
 public:
     /// Application Configuration options (for advanced Application construction)
@@ -162,6 +162,8 @@ public:
     const Profile& profile() const;
 
 protected:
+    /// Called to set things up for the application
+    virtual void initialise() { /* nothing by default */ }
     /// Called once per frame. For application logic and ImGui. Do not make raw OpenGL calls here.
     virtual void update() { /* nothing by default */ }
     /// Generic OpenGL drawing context, called immediately after update().
